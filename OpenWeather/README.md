@@ -30,3 +30,6 @@ The library module `esp8266`  was used. It includes WiFi and HTTP protocols.
 `machine` module was also used to get access to GPIO and UART.
 
 The code is: [ow_pico_ESP8266.py](ow_pico_ESP8266.py)
+
+- [ ] To do : put credentials in a separate file
+- [ ] To do : add a loop to repeat measurements
