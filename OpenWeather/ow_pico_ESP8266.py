@@ -1,4 +1,4 @@
-# File : ow_pico_ESP8266.py
+# File : ow_pico_ESP8266_r2.py
 # API : https://openweathermap.org/current
 # Add a try... except to overcome the problem of incorrect http answer
 # info@pcamus.be
@@ -17,7 +17,8 @@ ledN=Pin(12,Pin.OUT)
 ledE=Pin(13,Pin.OUT)
 ledS=Pin(14,Pin.OUT)
 ledW=Pin(15,Pin.OUT)
-for led in [ledN, ledE, ledS, ledW]:
+ledStat=Pin(25,Pin.OUT)
+for led in [ledN, ledE, ledS, ledW, ledStat]:
         led.low()
 
 def set_wind_led(wd):
@@ -32,6 +33,14 @@ def set_wind_led(wd):
     elif wd>=225 and wd<315 :
         ledW.high()
 
+def status_led(n): # on board LED is used as connection status indicator
+    for i in range(n):
+        ledStat.high()
+        time.sleep(0.2)
+        ledStat.low()
+        time.sleep(0.2)
+        
+
 # Create an ESP8266 Object
 esp01 = ESP8266(uartPort=1 ,baudRate=115200, txPin=(4), rxPin=(5))
 esp8266_at_ver = None
@@ -39,6 +48,7 @@ esp8266_at_ver = None
 print("StartUP",esp01.startUP())
 print("Echo-Off",esp01.echoING())
 print("")
+status_led(1) # 1 blink UART connected
 
 
 #Print ESP8266 AT comand version and SDK details
@@ -52,7 +62,7 @@ esp01.setCurrentWiFiMode()
 #Connect with the WiFi
 print("Try to connect with the WiFi..")
 while (1):
-    if "WIFI CONNECTED" in esp01.connectWiFi("-- your WiFi SSID --","-- your WiFi password--"):
+    if "WIFI CONNECTED" in esp01.connectWiFi("-- your WiFi SSID --","-- your WiFi password"):
         print("ESP8266 connected with the WiFi..")
         break;
     else:
@@ -60,6 +70,8 @@ while (1):
         time.sleep(2)
 
 print()
+status_led(2) # 2 blinks WiFi connected
+
 print("HTTP Get Operation.......\r\n")
 
 # My api key for openweathermap 
@@ -93,6 +105,7 @@ while http_success==False:
         print("Direction du vent : ",winddir,"°")
         set_wind_led(winddir)
         http_success=True
+        status_led(3) # 3 blinks HTTP request OK 
     except:
         pass
 
