@@ -6,3 +6,4 @@ The targeted platforms will be mainly the Raspberry Pi and Raspberry Pi Pico. La
 
 
 - [OpenWeather](/OpenWeather) : test how to extract some information fom a web site.
+- [Therm_sim](/Therm_sim) : simple thermostat simulation in a Qt designed GUI.
