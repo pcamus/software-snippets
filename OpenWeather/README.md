@@ -1,6 +1,6 @@
 # Retrieving data from a web page.
 
-In this example, I will test how to collect data from [openweathermap.org](https://openweathermap.org/current).
+In this example, I tested how to collect data from [openweathermap.org](https://openweathermap.org/current).
 
 The code is based on HTTP requests returning JSON formated data.
 
