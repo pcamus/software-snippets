@@ -2,7 +2,7 @@
 
 In this example, I created a small application to test PyQt.
 
-The gui is the following :
+The GUI is the following :
 
 ![](screen_shot.jpg)
 
