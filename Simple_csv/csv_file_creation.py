@@ -1,5 +1,5 @@
 # File : csv_file_creation.py
-# write numerical data in csv formated file
+# write numerical data in csv formatted file
 # and check remaining space in flash.
 # uos doc : https://makeblock-micropython-api.readthedocs.io/en/latest/library/uos.html
 # info@pcamus.be
