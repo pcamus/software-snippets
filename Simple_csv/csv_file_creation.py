@@ -2,8 +2,9 @@
 # write numerical data in csv formatted file
 # and check remaining space in flash.
 # uos doc : https://makeblock-micropython-api.readthedocs.io/en/latest/library/uos.html
+# % operator for string : https://realpython.com/python-modulo-string-formatting/
 # info@pcamus.be
-# 6/8/2022
+# 9/8/2022
 
 import uos
 
@@ -16,7 +17,7 @@ f = open(filename, "w") # "w" overwrire file, "a" append to file
 f.write("Temperature;Pressure\r\n") # header
 
 for row in test_val :
-    buffer="%2.1f;%4d\r\n"%(row[0],row[1])
+    buffer="%4.1f;%4d\r\n"%(row[0],row[1])
     f.write(buffer)
 
 f.close()
