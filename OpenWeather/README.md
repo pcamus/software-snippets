@@ -4,11 +4,13 @@ In this example, I tested how to collect data from [openweathermap.org](https://
 
 The code is based on HTTP requests returning JSON formated data.
 
-The first thing to do is to create an account on openweathermap.org, it's free for a basic access. You will receive an APi key to use in the request.
+The first thing to do is to create an account on openweathermap.org, it's free for a basic access. You will receive an API key to use in the request.
 
 #### My first test was on a Raspberry Pi 4, in Pyhton with the Thonny IDE.
 
 The code is: [test_openweather.py](test_openweather.py)
+
+To run the program you have to set the variable **`api_key`** with the openweathermap API key you got when you created your account.
 
 The HTTP library module used is `request`
 
