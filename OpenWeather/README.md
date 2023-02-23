@@ -33,5 +33,9 @@ The library module `esp8266`  was used. It includes WiFi and HTTP protocols.
 
 The code is: [ow_pico_ESP8266.py](ow_pico_ESP8266.py)
 
-- [x] To do : put credentials in a separate file
+- [ ] To do : put credentials in a separate file
 - [ ] To do : add a loop to repeat measurements
+
+### My third test was on a Raspberry Pi Pico W (with WiFi).
+
+The code is [owm_picow.py](owm_picow.py)
