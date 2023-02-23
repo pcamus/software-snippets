@@ -41,3 +41,5 @@ The code is: [ow_pico_ESP8266.py](ow_pico_ESP8266.py)
 The code is: [owm_picow.py](owm_picow.py). Works with a 2.4Ghz WiFi connection.
 
 The HTTP library module used is `urequests`
+
+`network` is the module used to make a connection to the WiFi network.
