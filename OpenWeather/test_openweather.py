@@ -53,7 +53,7 @@ print("Atmospheric pressure:",round(pressure),"hPa")
 print()
 
 hr,mr=round_time(dt_rise.hour,dt_rise.minute,dt_rise.second)
-print("Sun rise: {:d}h{:02d}".format(hr,mr))
+print("Sunrise: {:d}h{:02d}".format(hr,mr))
 
 hr,mr=round_time(dt_set.hour,dt_set.minute,dt_set.second)
 print("Sunset: {:d}h{:02d}".format(hr,mr))
