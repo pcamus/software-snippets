@@ -2,10 +2,12 @@
 # API : https://openweathermap.org/current
 # info@pcamus.be
 # 16/2/2022
+# Updated 23/02/2023
 
 # importing the required libraries
 import requests # HTTP library
 import datetime as dt # to convert UNIX time into something readable
+from secrets import *
 
 def round_time (h,m,s):
     # round time to minute
@@ -18,14 +20,14 @@ def round_time (h,m,s):
 
 
 # My api key for openweathermap 
-api_key = "-- your API key --"
+api_key = my_secrets["OWM_API_key"]
 # Base url for the open map api
 root_url = "http://api.openweathermap.org/data/2.5/weather?"
 # My location :
-lat="50.3813"
-lon="5.7324"
+lat=my_secrets["lat"]
+lon=my_secrets["lon"]
 
-url=root_url+"lat="+lat+"&lon="+lon+"&appid="+api_key
+url=root_url+"lat="+lat+"&lon="+lon+"&units=metric"+"&appid="+api_key
 r = requests.get(url) # Query openweather in http
 
 # displaying the json weather data returned by the api
@@ -43,17 +45,16 @@ dt_rise=dt.datetime.fromtimestamp(sun_rise) # return datetime object
 sun_set=float((dict["sys"]["sunset"])) # epoch time (= Unix notation)
 dt_set=dt.datetime.fromtimestamp(sun_set) # return datetime object
 
-print("Température actuelle : ",round(temp-273.15,1),"°C")
-print("Température minimum : ",round(temp_min-273.15,1),"°C")
-print("Température maximum : ",round(temp_max-273.15,1),"°C")
-print("Humidité relative : ",round(humidity),"%")
-print("Pression atmosphérique : ",round(pressure),"hPa")
+print("Current temperature: ",round(temp,1),"°C")
+print("Minimum temperature today: ",round(temp_min,1),"°C")
+print("Maximum temperature today: ",round(temp_max,1),"°C")
+print("Relative humidity: ",round(humidity),"%")
+print("Atmospheric pressure:",round(pressure),"hPa")
 print()
 
 hr,mr=round_time(dt_rise.hour,dt_rise.minute,dt_rise.second)
-print("Lever du soleil :",hr,"h",mr)
+print("Sun rise: {:d}h{:02d}".format(hr,mr))
 
 hr,mr=round_time(dt_set.hour,dt_set.minute,dt_set.second)
-print("Coucher du soleil :",hr,"h",mr)
-
+print("Sunset: {:d}h{:02d}".format(hr,mr))
 
