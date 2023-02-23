@@ -12,7 +12,7 @@ The code is: [test_openweather.py](test_openweather.py)
 
 To run the program you have to set the variable **`api_key`** with the openweathermap API key you got when you created your account.
 
-The HTTP library module used is `request`
+The HTTP library module used is `request`. This program uses an Ethernet connection.
 
 Result :
 
@@ -38,4 +38,6 @@ The code is: [ow_pico_ESP8266.py](ow_pico_ESP8266.py)
 
 ### My third test was on a Raspberry Pi Pico W (with WiFi).
 
-The code is [owm_picow.py](owm_picow.py). Works with an Ethernet connection.
+The code is [owm_picow.py](owm_picow.py). Works with a 2.4Ghz WiFi connection.
+
+The HTTP library module used is `urequests`
