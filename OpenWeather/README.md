@@ -38,4 +38,4 @@ The code is: [ow_pico_ESP8266.py](ow_pico_ESP8266.py)
 
 ### My third test was on a Raspberry Pi Pico W (with WiFi).
 
-The code is [owm_picow.py](owm_picow.py)
+The code is [owm_picow.py](owm_picow.py). Works with an Ethernet connection.
