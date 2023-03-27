@@ -1,4 +1,4 @@
-## Getting time with NPT protocol.
+## Getting time with NTP protocol.
 
 Gets date and time from an NTP server using a Raspberry Pi Pico W.
 
