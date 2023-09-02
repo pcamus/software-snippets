@@ -10,3 +10,4 @@ The targeted platforms will be mainly the Raspberry Pi and Raspberry Pi Pico. La
 - [Simple_csv](/Simple_csv): program in MicroPython to write numerical data in a csv formatted file.
 - [wifi_access](/wifi_access): using network module to access a WiFi network.
 - [ntp](/ntp): getting time with NTP.
+- [BLE](/BLE): using Bluetooth Low Energy in MicroPython with the Pico.
